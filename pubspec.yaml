@@ -1,0 +1,32 @@
+name: shop
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  http: ^0.13.3
+  connectivity: ^3.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  import_sorter: ^4.6.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/fonts/
+  fonts:
+    - family: ProximaNova
+      fonts: 
+        - asset: assets/fonts/ProximaNova-Regular.ttf
+        - asset: assets/fonts/ProximaNova-Bold.ttf
