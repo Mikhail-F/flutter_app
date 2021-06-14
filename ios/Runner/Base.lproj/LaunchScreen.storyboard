@@ -16,14 +16,14 @@
                         <viewControllerLayoutGuide type="top" id="Hn2-Y3-kp2"/>
                         <viewControllerLayoutGuide type="bottom" id="EFY-IY-hko"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="playback" id="Ze5-6b-2t3">
+                    <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="redraw" semanticContentAttribute="playback" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" image="LaunchImage" id="YRO-k0-Ey4">
-                                <rect key="frame" x="0.0" y="0.0" width="388" height="865"/>
+                            <imageView contentMode="redraw" image="LaunchImage" id="YRO-k0-Ey4">
+                                <rect key="frame" x="0.0" y="0.0" width="420" height="900"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>

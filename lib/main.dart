@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'block.dart';
+import 'blockSerialized.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,11 +33,12 @@ class _HomePageState extends State<HomePage> {
   late bool loading = false;
   late bool connectionStatus = false;
 
+  // Получение данных с сервера
   void getData() async {
     setState(() {
       loading = false;
     });
-    
+
     var connectivityResult = await (Connectivity().checkConnectivity());
     late bool isConnect = false;
 
@@ -46,9 +48,9 @@ class _HomePageState extends State<HomePage> {
     if (isConnect) {
       final uri = Uri.parse('https://d-element.ru/test_api.php');
       final result = await http.get(uri);
-
+      var items = jsonDecode(result.body);
       setState(() {
-        res = jsonDecode(result.body)['items'];
+        res = items['items'].map((el) => BlockSerialized.fromJson(el)).toList();
         connectionStatus = true;
       });
     }
@@ -90,8 +92,8 @@ class _HomePageState extends State<HomePage> {
                     child: GridView(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
-                         childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height / 1.2),
+                        childAspectRatio: MediaQuery.of(context).size.width /
+                            (MediaQuery.of(context).size.height / 1.2),
                         crossAxisSpacing: 15,
                       ),
                       children: [...res.map((el) => Block(item: el)).toList()],
@@ -112,9 +114,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )
             : Center(
-                child: CircularProgressIndicator(
-                  semanticsLabel: 'Linear progress indicator',
-                ),
+                child: CircularProgressIndicator(),
               ),
       ),
     );

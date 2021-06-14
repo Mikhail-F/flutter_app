@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Block extends StatelessWidget {
-  final Map<String, dynamic> item;
+  final item;
   const Block({Key? key, required this.item}) : super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class Block extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: FadeInImage.assetNetwork(
                 placeholder: 'assets/images/defaultImage.png',
-                image: item['image'],
+                image: item.image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -27,21 +27,21 @@ class Block extends StatelessWidget {
             height: 10,
           ),
           Text(
-            item['article'].toString(),
+            item.article.toString(),
             style: TextStyle(color: const Color(0xff8B9BA9), fontSize: 13),
           ),
           SizedBox(
             height: 5,
           ),
           Text(
-            item['name'],
+            item.name,
             style: TextStyle(color: Colors.black, fontSize: 13),
           ),
           SizedBox(
             height: 5,
           ),
           Text(
-            '${item['price'] == null ? 0 : item['price']} руб.',
+            '${item.price == null ? 0 : item.price} руб.',
             style: TextStyle(
                 fontFamily: 'ProximaNova',
                 fontWeight: FontWeight.bold,
